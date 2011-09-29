@@ -44,7 +44,7 @@
 
 #include "asn1/string.hpp"
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #include <cassert>
 
@@ -71,7 +71,7 @@ namespace cryptoplus
 
 			error::throw_error_if(_size < 0);
 
-			boost::shared_ptr<unsigned char> pout(out, _OPENSSL_free);
+			std::shared_ptr<unsigned char> pout(out, _OPENSSL_free);
 
 			return std::vector<unsigned char>(out, out + _size);
 		}

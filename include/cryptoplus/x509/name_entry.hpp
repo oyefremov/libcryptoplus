@@ -53,7 +53,7 @@
 
 #include <openssl/x509.h>
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #include <cstring>
 #include <string>

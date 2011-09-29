@@ -55,7 +55,7 @@
 #include <openssl/pem.h>
 #include <openssl/engine.h>
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #include <vector>
 

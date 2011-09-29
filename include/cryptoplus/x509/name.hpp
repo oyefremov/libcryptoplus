@@ -59,6 +59,7 @@
 
 #include <cstring>
 #include <string>
+#include <assert.h>
 
 namespace cryptoplus
 {

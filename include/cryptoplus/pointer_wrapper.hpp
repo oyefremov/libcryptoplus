@@ -47,7 +47,7 @@
 
 #include "nullable.hpp"
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 namespace cryptoplus
 {
@@ -141,17 +141,17 @@ namespace cryptoplus
 			 * \brief Get the underlying pointer.
 			 * \return The underlying pointer.
 			 */
-			boost::shared_ptr<value_type>& ptr();
+			std::shared_ptr<value_type>& ptr();
 
 			/**
 			 * \brief Get the underlying pointer.
 			 * \return The underlying pointer.
 			 */
-			const boost::shared_ptr<value_type>& ptr() const;
+			const std::shared_ptr<value_type>& ptr() const;
 
 		private:
 
-			boost::shared_ptr<value_type> m_pointer;
+			std::shared_ptr<value_type> m_pointer;
 
 			friend class nullable<pointer_wrapper<T> >;
 	};
@@ -194,12 +194,12 @@ namespace cryptoplus
 		return static_cast<bool>(m_pointer);
 	}
 	template <typename T>
-	inline boost::shared_ptr<typename pointer_wrapper<T>::value_type>& pointer_wrapper<T>::ptr()
+	inline std::shared_ptr<typename pointer_wrapper<T>::value_type>& pointer_wrapper<T>::ptr()
 	{
 		return m_pointer;
 	}
 	template <typename T>
-	inline const boost::shared_ptr<typename pointer_wrapper<T>::value_type>& pointer_wrapper<T>::ptr() const
+	inline const std::shared_ptr<typename pointer_wrapper<T>::value_type>& pointer_wrapper<T>::ptr() const
 	{
 		return m_pointer;
 	}

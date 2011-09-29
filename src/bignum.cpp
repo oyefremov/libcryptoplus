@@ -47,7 +47,7 @@
 
 #include <openssl/crypto.h>
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #include <cassert>
 #include <stdexcept>
@@ -104,14 +104,14 @@ namespace cryptoplus
 
 		std::string bignum::to_hex() const
 		{
-			boost::shared_ptr<char> result(BN_bn2hex(ptr().get()), _OPENSSL_free);
+			std::shared_ptr<char> result(BN_bn2hex(ptr().get()), _OPENSSL_free);
 
 			return std::string(result.get());
 		}
 
 		std::string bignum::to_dec() const
 		{
-			boost::shared_ptr<char> result(BN_bn2dec(ptr().get()), _OPENSSL_free);
+			std::shared_ptr<char> result(BN_bn2dec(ptr().get()), _OPENSSL_free);
 
 			return std::string(result.get());
 		}

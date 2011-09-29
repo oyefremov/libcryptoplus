@@ -48,7 +48,7 @@
 #include "bio_ptr.hpp"
 #include "../error/cryptographic_exception.hpp"
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #include <stdexcept>
 
@@ -90,7 +90,7 @@ namespace cryptoplus
 
 			private:
 
-				boost::shared_ptr<BIO> m_bio;
+				std::shared_ptr<BIO> m_bio;
 		};
 
 		inline bio_chain::bio_chain(BIO_METHOD* _type) : m_bio(BIO_new(_type), BIO_free_all)

@@ -87,7 +87,7 @@ namespace cryptoplus
 			    NULL
 			);
 
-			boost::shared_ptr<CHAR> _msgbuf(msgbuf, LocalFree);
+			std::shared_ptr<CHAR> _msgbuf(msgbuf, LocalFree);
 
 			std::string result(msgbuf, strlen(_msgbuf.get()));
 
