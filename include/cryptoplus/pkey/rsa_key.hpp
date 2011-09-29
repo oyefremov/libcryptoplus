@@ -55,8 +55,6 @@
 #include <openssl/pem.h>
 #include <openssl/engine.h>
 
-#include <memory>
-
 #include <vector>
 
 namespace cryptoplus
